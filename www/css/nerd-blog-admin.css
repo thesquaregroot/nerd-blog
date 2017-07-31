@@ -1,0 +1,27 @@
+#content {
+    margin-left: 2%;
+}
+input {
+    margin: 5px 0px 5px 5px;
+    padding: 5px;
+}
+label {
+    margin: 5px 5px 5px 0px;
+    padding: 5px;
+}
+.buttonset {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#post_selector {
+    padding: 10px;
+    padding-bottom: 20px;
+}
+#post_to_edit {
+    height: 30px;
+}
+textarea {
+    width: 95%;
+    height: 400px;
+    padding: 5px;
+}
