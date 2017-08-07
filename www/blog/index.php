@@ -1,6 +1,6 @@
 <?php
     $SUBTITLE = "Blog";
-    require_once("../../include/mysql.php");
+    require_once("../../include/blog/mysql.php");
 
     if (isset($_GET['post'])) {
         // display selected post
@@ -13,7 +13,7 @@
         $_GET['post'] = $post['id'];
     }
 
-    include("../../include/top.php");
+    include("../../include/blog/top.php");
 ?>
 
 <script type="text/javascript">
@@ -113,5 +113,5 @@
 ?>
 
 <?php
-    include("../../include/bottom.php");
+    include("../../include/blog/bottom.php");
 ?>
