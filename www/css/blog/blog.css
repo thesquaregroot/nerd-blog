@@ -1,58 +1,10 @@
-html {
-    min-height: 100%;
-    height: 100%;
-    font-size: 100%;
-}
-body {
-    min-height: 100%;
-    height: 100%;
-    background: #CCC; /* For browsers that do not support gradients */
-    background: -webkit-radial-gradient(circle, #AAA, #BBB, #CCC); /* Safari */
-    background: -o-radial-gradient(circle,      #AAA, #BBB, #CCC); /* Opera 11.6 to 12.0 */
-    background: -moz-radial-gradient(circle,    #AAA, #BBB, #CCC); /* Firefox 3.6 to 15 */
-    background: radial-gradient(circle,         #AAA, #BBB, #CCC); /* Standard syntax */
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.5em;
-    margin: 0px;
-}
-
-
-.top, .content {
-    box-sizing: border-box;
-    border: gray solid thin;
-    background-color: white;
-    min-width: 1000px;
-    width: 85%;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.top {
-    font-size: 200%;
-    font-weight: bold;
-    margin: 10px auto;
-    padding: 20px;
-}
-
-.top a {
-    text-decoration: none;
-    color: #333;
-}
-
-.content {
-    min-height: calc(100% - 7rem);
-    margin-bottom: 10px;
-}
-
 .notification {
     background-color: #EEE;
     padding: 5px;
     border: #333 solid thin;
     border-radius: 5px;
 }
+
 .notification i {
     margin: 0px 3px;
 }
@@ -119,7 +71,6 @@ textarea {
 
 .posts {
     border: #CCC solid thin;
-    background-color: #DDE;
     padding: 4px;
 }
 

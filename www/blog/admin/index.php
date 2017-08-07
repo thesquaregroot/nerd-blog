@@ -1,6 +1,6 @@
 <?php
     $ADMIN=1;
-    include('../../include/blog/top.php');
+    include('../../../include/blog/top.php');
 ?>
 
 <a name="notification"></a>
@@ -50,5 +50,5 @@
 </form>
 
 <?php
-    include('../../include/blog/bottom.php');
+    include('../../../include/blog/bottom.php');
 ?>

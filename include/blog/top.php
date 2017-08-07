@@ -22,10 +22,4 @@
         echo file_get_contents($HTML_FILE);
     }
 
-    if (isset($ADMIN)) {
-        ?>
-        <link rel="stylesheet" type="text/css" href="/css/blog/admin.css"/>
-        <script src="/js/blog/admin.js"></script>
-        <?php
-    }
 ?>
