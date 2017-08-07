@@ -1,10 +1,8 @@
 <?php
     // Website
-    $TITLE = "My Nerdy Blog";
     $BASE_URL = "http://localhost:8080";
     $ALLOW_COMMENTS = true;
     $ALLOW_HEARTS = true;
-    $FAVICON = false;
 
     // Admin
     // default username/password: 'admin'/'admin'
@@ -27,9 +25,4 @@
     $EMAIL_RECIPIENT = "";
     $EMAIL_SENDER = "";
     $EMAIL_REPLY_TO = "";
-
-    function print_top() {
-        global $TITLE;
-        ?><div class="top"><a href="/blog/"><?php echo $TITLE; ?></a></div><?php
-    }
 ?>
