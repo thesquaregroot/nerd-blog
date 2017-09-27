@@ -1,42 +1,15 @@
 <?php
-    $SUBTITLE = "Blog";
-    require_once("../../include/mysql.php");
+    require_once("../../include/blog/top.php");
 
     if (isset($_GET['post'])) {
         // display selected post
         $post = fetch_assoc(query("SELECT title FROM posts WHERE id = '%s'", $_GET['post']));
-        $SUBTITLE = $post['title'];
     }
     if (isset($_GET['slug'])) {
         $post = fetch_assoc(query("SELECT id, title FROM posts WHERE slug = '%s'", $_GET['slug']));
-        $SUBTITLE = $post['title'];
         $_GET['post'] = $post['id'];
     }
-
-    include("../../include/top.php");
 ?>
-
-<script type="text/javascript">
-    $(function() {
-        let postId = 0;
-<?php if (isset($_GET['post'])) { ?>
-        postId = '<?=$_GET['post']?>';
-<?php } ?>
-        // fill in comment space
-        loadComments(postId);
-        // post comment event
-        $('#comment-form').submit(function (e) {
-            e.preventDefault();
-            postComment(postId, $('#alias').val(), $('#comment-text').val(), function(success) {
-                if (success) {
-                    $('#comment-text').val('');
-                    $('#alias').val('');
-                    loadComments(postId);
-                }
-            });
-        });
-    });
-</script>
 
 <?php
     if (isset($_GET['post'])) {
@@ -89,7 +62,8 @@
         }
 
         echo "</div>";
-    } else {
+    }
+    else {
         // display list of posts
         echo "<div id=\"category_selectors\">";
         echo "<button onclick=\"select('all', this);\">All Posts</button>";
@@ -112,6 +86,30 @@
     }
 ?>
 
+<script type="text/javascript">
+    $(function() {
+        let postId = 0;
+        <?php
+            if (isset($_GET['post'])) {
+                echo "postId = '", $_GET['post'], "';";
+            }
+        ?>
+        // fill in comment space
+        loadComments(postId);
+        // post comment event
+        $('#comment-form').submit(function (e) {
+            e.preventDefault();
+            postComment(postId, $('#alias').val(), $('#comment-text').val(), function(success) {
+                if (success) {
+                    $('#comment-text').val('');
+                    $('#alias').val('');
+                    loadComments(postId);
+                }
+            });
+        });
+    });
+</script>
+
 <?php
-    include("../../include/bottom.php");
+    require_once("../../include/blog/bottom.php");
 ?>
