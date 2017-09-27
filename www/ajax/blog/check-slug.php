@@ -1,7 +1,7 @@
 <?php
-    include("../../include/config.php");
-    include("../../include/session.php");
-    include("../../include/mysql.php");
+    include("../../../include/blog/config.php");
+    include("../../../include/blog/session.php");
+    include("../../../include/blog/mysql.php");
 
     header('Content-type: text/xml');
 

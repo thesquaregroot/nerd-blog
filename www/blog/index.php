@@ -1,6 +1,6 @@
 <?php
     $SUBTITLE = "Blog";
-    require_once("../../include/mysql.php");
+    require_once("../../include/blog/mysql.php");
 
     if (isset($_GET['post'])) {
         // display selected post
@@ -13,30 +13,8 @@
         $_GET['post'] = $post['id'];
     }
 
-    include("../../include/top.php");
+    require_once("../../include/blog/top.php");
 ?>
-
-<script type="text/javascript">
-    $(function() {
-        let postId = 0;
-<?php if (isset($_GET['post'])) { ?>
-        postId = '<?=$_GET['post']?>';
-<?php } ?>
-        // fill in comment space
-        loadComments(postId);
-        // post comment event
-        $('#comment-form').submit(function (e) {
-            e.preventDefault();
-            postComment(postId, $('#alias').val(), $('#comment-text').val(), function(success) {
-                if (success) {
-                    $('#comment-text').val('');
-                    $('#alias').val('');
-                    loadComments(postId);
-                }
-            });
-        });
-    });
-</script>
 
 <?php
     if (isset($_GET['post'])) {
@@ -112,6 +90,28 @@
     }
 ?>
 
+<script type="text/javascript">
+    $(function() {
+        let postId = 0;
+<?php if (isset($_GET['post'])) { ?>
+        postId = '<?=$_GET['post']?>';
+<?php } ?>
+        // fill in comment space
+        loadComments(postId);
+        // post comment event
+        $('#comment-form').submit(function (e) {
+            e.preventDefault();
+            postComment(postId, $('#alias').val(), $('#comment-text').val(), function(success) {
+                if (success) {
+                    $('#comment-text').val('');
+                    $('#alias').val('');
+                    loadComments(postId);
+                }
+            });
+        });
+    });
+</script>
+
 <?php
-    include("../../include/bottom.php");
+    require_once("../../include/blog/bottom.php");
 ?>
