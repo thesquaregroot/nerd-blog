@@ -15,7 +15,7 @@ function addPost(title, slug, author, contents, categories, callbackFunction) {
     for (let i in categories) {
         data[categories[i]] = true;
     }
-    $.post('/ajax/add-post.php', data).done(function (xml) {
+    $.post('/ajax/blog/add-post.php', data).done(function (xml) {
         callbackFunction(xml);
     });
 }
@@ -31,7 +31,7 @@ function editPost(postId, title, slug, author, contents, categories, callbackFun
     for (let i in categories) {
         data[categories[i]] = true;
     }
-    $.post('/ajax/edit-post.php', data).done(function (xml) {
+    $.post('/ajax/blog/edit-post.php', data).done(function (xml) {
         callbackFunction(xml);
     });
 }
@@ -104,7 +104,7 @@ $(function() {
     // fill data when post to edit selected
     $('#post_to_edit').change(function() {
         $.ajax({
-            url: "/ajax/get-posts.php?id=" + $(this).val()
+            url: "/ajax/blog/get-posts.php?id=" + $(this).val()
         }).done(function(xml) {
             // set title and contents
             $('#title').val($('title', xml).text());
